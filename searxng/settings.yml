@@ -1,5 +1,7 @@
 # see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
 use_default_settings: true
+general:
+  instance_name: "Search"
 server:
   # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
   secret_key: "tcz52SYhggVJR6A5qfUcg@ApnJf!T@iZ" # change this!
@@ -8,5 +10,6 @@ server:
 ui:
   static_use_hash: true
   infinite_scroll: true
+  query_in_title: true
 redis:
   url: redis://redis:6379/0
