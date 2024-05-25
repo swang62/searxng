@@ -7,7 +7,7 @@ services:
     networks:
       - searxng
     volumes:
-      - data:/data
+      - searxng-data:/data
     cap_drop:
       - ALL
     cap_add:
@@ -28,10 +28,8 @@ services:
       - searxng
     ports:
       - "127.0.0.1:8080:8080"
-    volumes:
-      - ./settings.yml:/etc/searxng/settings.yml
-      # - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     environment:
+      - SEARXNG_HOSTNAME=search.mildlybrewed.com
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
     cap_drop:
       - ALL
@@ -49,4 +47,4 @@ networks:
   searxng:
 
 volumes:
-  data:
+  searxng-data:
