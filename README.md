@@ -2,8 +2,6 @@
 
 Create a new SearXNG instance in five minutes using Docker
 
-## What is included ?
-
 | Name | Description | Docker image | Dockerfile |
 | -- | -- | -- | -- |
 | [Caddy](https://github.com/caddyserver/caddy) | Reverse proxy (create a LetsEncrypt certificate automatically) | [docker.io/library/caddy:2-alpine](https://hub.docker.com/_/caddy)           | [Dockerfile](https://github.com/caddyserver/caddy-docker/blob/master/Dockerfile.tmpl) |
