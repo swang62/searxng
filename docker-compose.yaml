@@ -7,7 +7,7 @@ services:
     networks:
       - searxng
     volumes:
-      - valkey-data:/data
+      - data:/data
     cap_drop:
       - ALL
     cap_add:
@@ -49,5 +49,4 @@ networks:
   searxng:
 
 volumes:
-  valkey-data:
-    name: valkey-data
+  data:
