@@ -29,8 +29,7 @@ services:
     ports:
       - "127.0.0.1:8080:8080"
     environment:
-      - SEARXNG_HOSTNAME=search.mildlybrewed.com
-      - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
+      - SEARXNG_BASE_URL=https://search.mildlybrewed.com/
     cap_drop:
       - ALL
     cap_add:
