@@ -30,7 +30,7 @@ services:
       - "127.0.0.1:8080:8080"
     volumes:
       - ./searxng:/etc/searxng:rw
-      - ${PWD}/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
+      - ${PWD}/static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
     cap_drop:
