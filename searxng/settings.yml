@@ -10,5 +10,10 @@ ui:
   static_use_hash: true
   infinite_scroll: true
   query_in_title: true
-redis:
-  url: redis://redis:6379/0
+search:
+  autocomplete: "google"
+engines:
+  - name: bing
+    engine: bing
+    shortcut: bi
+    disabled: false
