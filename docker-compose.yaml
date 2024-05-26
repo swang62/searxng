@@ -24,10 +24,15 @@ services:
     container_name: searxng
     image: docker.io/searxng/searxng:latest
     restart: unless-stopped
+    links:
+      - redis
     networks:
       - searxng
     ports:
       - "127.0.0.1:8080:8080"
+    # volumes:
+    # - ./searxng:/etc/searxng
+    # - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     environment:
       - SEARXNG_BASE_URL=https://search.mildlybrewed.com/
     cap_drop:

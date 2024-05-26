@@ -1,5 +1,5 @@
 *~
-
+.vscode
 searxng-docker.service
 caddy
 srv
