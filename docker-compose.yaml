@@ -31,7 +31,7 @@ services:
     ports:
       - "127.0.0.1:8080:8080"
     volumes:
-      - /home/searxng/searxng:/etc/searxng
+      - /home/searxng/searxng:/etc/searxng:rw
     # - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     environment:
       - SEARXNG_BASE_URL=https://search.mildlybrewed.com/
