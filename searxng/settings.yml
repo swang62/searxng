@@ -3,7 +3,6 @@ use_default_settings: true
 general:
   instance_name: "Search"
 server:
-  # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
   secret_key: "tcz52SYhggVJR6A5qfUcg@ApnJf!T@iZ" # change this!
   limiter: false # can be disabled for a private instance
   image_proxy: false # can be disabled for a private instance
