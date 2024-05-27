@@ -27,10 +27,6 @@ engines:
   shortcut: loc
   categories: images
   disabled: true
-- name: genius
-  engine: genius
-  shortcut: gen
-  disabled: true
 - name: lemmy communities
   engine: lemmy
   lemmy_type: Communities
@@ -53,12 +49,4 @@ engines:
   network: lemmy communities
   lemmy_type: Comments
   shortcut: lecom
-  disabled: true
-- name: google news
-  engine: google_news
-  shortcut: gon
-  disabled: true
-- name: vimeo
-  engine: vimeo
-  shortcut: vm
   disabled: true
