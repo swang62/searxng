@@ -13,7 +13,52 @@ ui:
 search:
   autocomplete: "google"
 engines:
-  - name: bing
-    engine: bing
-    shortcut: bi
-    disabled: false
+- name: bing
+  engine: bing
+  shortcut: bi
+  disabled: false
+- name: openverse
+  engine: openverse
+  categories: images
+  shortcut: opv
+  disabled: true
+- name: library of congress
+  engine: loc
+  shortcut: loc
+  categories: images
+  disabled: true
+- name: genius
+  engine: genius
+  shortcut: gen
+  disabled: true
+- name: lemmy communities
+  engine: lemmy
+  lemmy_type: Communities
+  shortcut: leco
+  disabled: true
+- name: lemmy users
+  engine: lemmy
+  network: lemmy communities
+  lemmy_type: Users
+  shortcut: leus
+  disabled: true
+- name: lemmy posts
+  engine: lemmy
+  network: lemmy communities
+  lemmy_type: Posts
+  shortcut: lepo
+  disabled: true
+- name: lemmy comments
+  engine: lemmy
+  network: lemmy communities
+  lemmy_type: Comments
+  shortcut: lecom
+  disabled: true
+- name: google news
+  engine: google_news
+  shortcut: gon
+  disabled: true
+- name: vimeo
+  engine: vimeo
+  shortcut: vm
+  disabled: true
