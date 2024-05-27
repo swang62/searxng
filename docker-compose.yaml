@@ -3,8 +3,6 @@ services:
     image: docker.io/searxng/searxng:latest
     environment:
       - SEARXNG_BASE_URL=https://search.mildlybrewed.com/
-    ports:
-      - 8080:8080
     restart: unless-stopped
     volumes:
       - /home/searxng/searxng:/etc/searxng:rw
