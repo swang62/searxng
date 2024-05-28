@@ -12,41 +12,44 @@ ui:
   query_in_title: true
 search:
   autocomplete: "google"
+  formats:
+    - html
+    - json
 engines:
-- name: bing
-  engine: bing
-  shortcut: bi
-  disabled: false
-- name: openverse
-  engine: openverse
-  categories: images
-  shortcut: opv
-  disabled: true
-- name: library of congress
-  engine: loc
-  shortcut: loc
-  categories: images
-  disabled: true
-- name: lemmy communities
-  engine: lemmy
-  lemmy_type: Communities
-  shortcut: leco
-  disabled: true
-- name: lemmy users
-  engine: lemmy
-  network: lemmy communities
-  lemmy_type: Users
-  shortcut: leus
-  disabled: true
-- name: lemmy posts
-  engine: lemmy
-  network: lemmy communities
-  lemmy_type: Posts
-  shortcut: lepo
-  disabled: true
-- name: lemmy comments
-  engine: lemmy
-  network: lemmy communities
-  lemmy_type: Comments
-  shortcut: lecom
-  disabled: true
+  - name: bing
+    engine: bing
+    shortcut: bi
+    disabled: false
+  - name: openverse
+    engine: openverse
+    categories: images
+    shortcut: opv
+    disabled: true
+  - name: library of congress
+    engine: loc
+    shortcut: loc
+    categories: images
+    disabled: true
+  - name: lemmy communities
+    engine: lemmy
+    lemmy_type: Communities
+    shortcut: leco
+    disabled: true
+  - name: lemmy users
+    engine: lemmy
+    network: lemmy communities
+    lemmy_type: Users
+    shortcut: leus
+    disabled: true
+  - name: lemmy posts
+    engine: lemmy
+    network: lemmy communities
+    lemmy_type: Posts
+    shortcut: lepo
+    disabled: true
+  - name: lemmy comments
+    engine: lemmy
+    network: lemmy communities
+    lemmy_type: Comments
+    shortcut: lecom
+    disabled: true
