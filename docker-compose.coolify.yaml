@@ -1,0 +1,20 @@
+services:
+  searxng:
+    image: docker.io/searxng/searxng:latest
+    environment:
+      - SEARXNG_BASE_URL=https://search.mildlybrewed.com/
+    restart: unless-stopped
+    volumes:
+      - /home/searxng/searxng:/etc/searxng:rw
+      - /home/searxng/static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
