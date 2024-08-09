@@ -2,7 +2,7 @@ services:
   searxng:
     image: docker.io/searxng/searxng:latest
     environment:
-      - SEARXNG_BASE_URL=https://searx.mildlybrewed.com/
+      - SEARXNG_BASE_URL=https://search.mildlybrewed.com/
     restart: unless-stopped
     volumes:
       - ./searxng:/etc/searxng:rw
