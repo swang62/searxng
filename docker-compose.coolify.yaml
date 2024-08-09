@@ -2,11 +2,11 @@ services:
   searxng:
     image: docker.io/searxng/searxng:latest
     environment:
-      - SEARXNG_BASE_URL=https://search.mildlybrewed.com/
+      - SEARXNG_BASE_URL=https://searx.mildlybrewed.com/
     restart: unless-stopped
     volumes:
-      - /home/searxng/searxng:/etc/searxng:rw
-      - /home/searxng/static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
+      - ./searxng:/etc/searxng:rw
+      - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     cap_drop:
       - ALL
     cap_add:
