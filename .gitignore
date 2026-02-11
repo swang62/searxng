@@ -3,4 +3,5 @@
 searxng-docker.service
 caddy
 srv
+.env
 .DS_Store

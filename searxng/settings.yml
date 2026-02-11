@@ -1,41 +1,38 @@
 # see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
-use_default_settings: true
+
 general:
   instance_name: "Search"
 server:
-  secret_key: "ultrasecretkey" # change this!
-  limiter: false # can be disabled for a private instance
-  image_proxy: false # can be disabled for a private instance
+  secret_key: "secret"
+  limiter: false
+  public_instance: false
+  image_proxy: true
+  method: "GET"
+  http_protocol_version: "1.1"
+categories_as_tabs:
+  general:
+  images:
+  videos:
 ui:
   static_use_hash: true
   infinite_scroll: true
   query_in_title: true
+outgoing:
+  request_timeout: 5.0
 search:
-  autocomplete: "google"
+  autocomplete: "duckduckgo"
+  favicon_resolver: "duckduckgo"
+  default_lang: "en-US"
   formats:
     - html
     - json
-engines:
-  # ENABLE
-  - name: bing
-    engine: bing
-    shortcut: bi
-    disabled: false
-
-  # DISABLE
-  - name: openverse
-    engine: openverse
-    categories: images
-    shortcut: opv
-    disabled: true
-  - name: library of congress
-    engine: loc
-    shortcut: loc
-    categories: images
-    disabled: true
-  - name: qwant
-    qwant_categ: web
-    engine: qwant
-    shortcut: qw
-    categories: [general, web]
-    disabled: true
+use_default_settings:
+  engines:
+    remove:
+      - bing
+      - ahmia
+      - xpath
+      - torch
+      - radio browser
+      - openverse
+      - library of congress
