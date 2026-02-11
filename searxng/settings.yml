@@ -3,7 +3,7 @@ use_default_settings: true
 general:
   instance_name: "Search"
 server:
-  secret_key: "tcz52SYhggVJR6A5qfUcg@ApnJf!T@iZ" # change this!
+  secret_key: "ultrasecretkey" # change this!
   limiter: false # can be disabled for a private instance
   image_proxy: false # can be disabled for a private instance
 ui:
@@ -16,10 +16,13 @@ search:
     - html
     - json
 engines:
+  # ENABLE
   - name: bing
     engine: bing
     shortcut: bi
     disabled: false
+
+  # DISABLE
   - name: openverse
     engine: openverse
     categories: images
@@ -30,53 +33,9 @@ engines:
     shortcut: loc
     categories: images
     disabled: true
-  - name: lemmy communities
-    engine: lemmy
-    lemmy_type: Communities
-    shortcut: leco
-    disabled: true
-  - name: lemmy users
-    engine: lemmy
-    network: lemmy communities
-    lemmy_type: Users
-    shortcut: leus
-    disabled: true
-  - name: lemmy posts
-    engine: lemmy
-    network: lemmy communities
-    lemmy_type: Posts
-    shortcut: lepo
-    disabled: true
-  - name: lemmy comments
-    engine: lemmy
-    network: lemmy communities
-    lemmy_type: Comments
-    shortcut: lecom
-    disabled: true
   - name: qwant
     qwant_categ: web
     engine: qwant
     shortcut: qw
     categories: [general, web]
-    disabled: true
-  - name: qwant news
-    qwant_categ: news
-    engine: qwant
-    shortcut: qwn
-    categories: news
-    network: qwant
-    disabled: true
-  - name: qwant images
-    qwant_categ: images
-    engine: qwant
-    shortcut: qwi
-    categories: [images, web]
-    network: qwant
-    disabled: true
-  - name: qwant videos
-    qwant_categ: videos
-    engine: qwant
-    shortcut: qwv
-    categories: [videos, web]
-    network: qwant
     disabled: true
