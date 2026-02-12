@@ -1,5 +1,3 @@
-# see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
-
 general:
   instance_name: "Search"
 server:
@@ -19,6 +17,9 @@ ui:
   query_in_title: true
 outgoing:
   request_timeout: 5.0
+plugins:
+  searx.plugins.infinite_scroll.SXNGPlugin:
+    active: true
 search:
   autocomplete: "duckduckgo"
   favicon_resolver: "duckduckgo"
@@ -35,4 +36,5 @@ use_default_settings:
       - torch
       - radio browser
       - openverse
+      - wikidata
       - library of congress
