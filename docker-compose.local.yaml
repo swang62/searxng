@@ -20,6 +20,7 @@ services:
       - ${CACHE_LOCATION}:/var/cache/searxng
       - ./searxng:/etc/searxng:rw
       - ./static/favicon.png:/usr/local/searxng/searx/static/themes/simple/img/favicon.png
+      - ./static/favicon.svg:/usr/local/searxng/searx/static/themes/simple/img/favicon.svg
       - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     healthcheck:
       test: "wget --spider  http://127.0.0.1:8080 || exit 1"
