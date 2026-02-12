@@ -21,7 +21,7 @@ services:
       - ./searxng:/etc/searxng:rw
       - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     healthcheck:
-      test: "wget --no-verbose --spider --tries=1 http://127.0.0.1:8080 || exit 1"
+      test: "wget --spider  http://127.0.0.1:8080 || exit 1"
       interval: 1m
       timeout: 5s
       retries: 3
