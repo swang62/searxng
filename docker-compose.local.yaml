@@ -26,10 +26,10 @@ services:
       - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     healthcheck:
       test: "wget --spider  http://127.0.0.1:8080 || exit 1"
-      interval: 1m
+      interval: 5m
       timeout: 5s
       retries: 3
-      start_period: 30s
+      start_period: 10s
 
 networks:
   caddy:
