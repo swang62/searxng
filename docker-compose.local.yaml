@@ -25,7 +25,7 @@ services:
       - ./static/favicon.svg.gz:/usr/local/searxng/searx/static/themes/simple/img/favicon.svg.gz
       - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
     healthcheck:
-      test: "wget --spider  http://127.0.0.1:8080 || exit 1"
+      test: "wget --nv --spider  http://127.0.0.1:8080 || exit 1"
       interval: 5m
       timeout: 5s
       retries: 3
