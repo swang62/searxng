@@ -27,7 +27,7 @@ services:
     healthcheck:
       test: "wget -nv --spider  http://127.0.0.1:8080 || exit 1"
       interval: 5m
-      timeout: 5s
+      timeout: 10s
       retries: 3
       start_period: 10s
 
