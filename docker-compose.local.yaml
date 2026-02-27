@@ -1,4 +1,27 @@
 services:
+  searxng-proxy:
+    image: quay.io/oauth2-proxy/oauth2-proxy:latest
+    container_name: searxng-proxy
+    environment:
+      - OAUTH2_PROXY_CLIENT_ID=${OAUTH2_PROXY_CLIENT_ID}
+      - OAUTH2_PROXY_CLIENT_SECRET=${OAUTH2_PROXY_CLIENT_SECRET}
+      - OAUTH2_PROXY_COOKIE_SECRET=${OAUTH2_PROXY_COOKIE_SECRET}
+      - OAUTH2_PROXY_OIDC_ISSUER_URL=${OAUTH2_PROXY_OIDC_ISSUER_URL}
+      - "OAUTH2_PROXY_UPSTREAMS=http://searxng:8080"
+      - OAUTH2_PROXY_PROVIDER=oidc
+      - OAUTH2_PROXY_SCOPE=openid email profile groups
+      - OAUTH2_PROXY_REVERSE_PROXY=true
+      - OAUTH2_PROXY_EMAIL_DOMAINS=["*"]
+      - OAUTH2_PROXY_COOKIE_SECURE=true
+      - OAUTH2_PROXY_COOKIE_NAME=__Host-oauth2-proxy
+      - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
+    restart: unless-stopped
+    networks:
+      - cloudflared
+      - proxy
+    expose:
+      - 4180
+
   searxng:
     image: searxng/searxng:2026.1.20-410996df9
     container_name: searxng
@@ -7,6 +30,7 @@ services:
     restart: unless-stopped
     networks:
       - caddy
+      - proxy
     expose:
       - 8080
     cap_drop:
@@ -34,3 +58,6 @@ services:
 networks:
   caddy:
     external: true
+  cloudflared:
+    external: true
+  proxy:
