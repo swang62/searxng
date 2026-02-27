@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     networks:
       - cloudflared
-      - proxy
+      - searxng_proxy
     expose:
       - 4180
 
@@ -30,7 +30,7 @@ services:
     restart: unless-stopped
     networks:
       - caddy
-      - proxy
+      - searxng_proxy
     expose:
       - 8080
     cap_drop:
@@ -60,4 +60,5 @@ networks:
     external: true
   cloudflared:
     external: true
-  proxy:
+  searxng_proxy:
+    name: searxng_proxy
