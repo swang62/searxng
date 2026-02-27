@@ -19,8 +19,8 @@ services:
     networks:
       - cloudflared
       - proxy
-    expose:
-      - 4180
+    ports:
+      - 4180:4180
 
   searxng:
     image: searxng/searxng:2026.1.20-410996df9
