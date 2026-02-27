@@ -17,12 +17,12 @@ services:
       - OAUTH2_PROXY_SCOPE=openid email profile groups
       - OAUTH2_PROXY_SKIP_AUTH_ROUTES=[".*/api/health"]
       - OAUTH2_PROXY_UPSTREAMS=http://searxng:8080
-    restart: unless-stopped
     networks:
       - cloudflared
       - proxy
-    ports:
+    expose:
       - 4180
+    restart: unless-stopped
 
   searxng:
     image: searxng/searxng:2026.1.20-410996df9
