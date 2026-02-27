@@ -7,6 +7,7 @@ services:
     restart: unless-stopped
     networks:
       - caddy
+      - cloudflared
     expose:
       - 8080
     cap_drop:
@@ -33,4 +34,6 @@ services:
 
 networks:
   caddy:
+    external: true
+  cloudflared:
     external: true
