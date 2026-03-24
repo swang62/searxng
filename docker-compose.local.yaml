@@ -1,6 +1,6 @@
 services:
   searxng:
-    image: searxng/searxng:latest
+    image: searxng/searxng:2026.1.20-410996df9
     container_name: searxng
     environment:
       - SEARXNG_BASE_URL=${BASE_URL}
