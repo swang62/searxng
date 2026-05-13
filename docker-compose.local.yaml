@@ -1,22 +1,10 @@
 services:
   searxng:
-    image: searxng/searxng:2026.1.20-410996df9
     container_name: searxng
-    environment:
-      - SEARXNG_BASE_URL=${BASE_URL}
+    image: searxng/searxng:latest
     restart: unless-stopped
-    networks:
-      - caddy
-      - cloudflared
     expose:
       - 8080
-    cap_drop:
-      - ALL
-    cap_add:
-      - CHOWN
-      - SETGID
-      - SETUID
-      - DAC_OVERRIDE
     volumes:
       - ${CACHE_LOCATION}:/var/cache/searxng
       - ./searxng:/etc/searxng:rw
@@ -25,12 +13,24 @@ services:
       - ./static/favicon.svg.br:/usr/local/searxng/searx/static/themes/simple/img/favicon.svg.br
       - ./static/favicon.svg.gz:/usr/local/searxng/searx/static/themes/simple/img/favicon.svg.gz
       - ./static/searxng.png:/usr/local/searxng/searx/static/themes/simple/img/searxng.png
+    environment:
+      - SEARXNG_BASE_URL=${BASE_URL}
+    networks:
+      - caddy
+      - cloudflared
     healthcheck:
       test: "wget -nv --spider  http://127.0.0.1:8080 || exit 1"
       interval: 5m
       timeout: 10s
       retries: 3
       start_period: 10s
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+    cap_drop:
+      - ALL
 
 networks:
   caddy:
