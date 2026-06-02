@@ -18,6 +18,9 @@ services:
     networks:
       - caddy
       - cloudflared
+    labels:
+      caddy: searxng.supersteve.lan
+      caddy.reverse_proxy: searxng:8080
     healthcheck:
       test: "wget -nv --spider  http://127.0.0.1:8080 || exit 1"
       interval: 5m
